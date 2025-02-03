@@ -1,0 +1,82 @@
+<% layout("/layouts/boilerplate.ejs"); %>
+<body>
+<!-- <h2>All Listings</h2> -->
+ <div id = "filter">
+<div class="filters">
+  <div><i class="fa-solid fa-fire"></i></div>
+  <p>trending</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-water-ladder"></i></div>
+  <p>pool</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-tree"></i></div>
+  <p>nature</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-house"></i></div>
+  <p>villa</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-bed"></i></div>
+  <p>rooms</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-wind"></i></div>
+  <p>wind-mills</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-umbrella-beach"></i></div>
+  <p>beach</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-mountain"></i></div>
+  <p>mountain</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-warehouse"></i></div>
+  <p>warehouse</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-campground"></i></div>
+  <p>camping</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-water"></i></div>
+  <p>lakeside</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-igloo"></i></div>
+  <p>snowy</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-fire"></i></div>
+  <p>trending</p>
+</div>
+<div class="filters">
+  <div><i class="fa-solid fa-fire"></i></div>
+  <p>trending</p>
+</div>
+ </div>
+   <%if(lists.length > 0){%>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+      <%for(let list of lists){%>
+         <a href = "/listings/show/<%=list._id%>"> 
+          <div class="card" style="width: 20rem;" >
+              <img src="<%=list.image.url%>" class="card-img-top" alt="listing_images" style = "height: 20rem;">
+              <div class="card-img-overlay"> 
+                </div>
+              <div class="card-body">
+                <p class="card-text"><b><%=list.title%></b>
+              <br>
+              &#8377; <%=list.price.toLocaleString("en-IN")%>/night
+              </p>
+              </div>
+            </div>
+          </a>
+      <%}%>
+  </div>
+    <%}%>
+  
+</body>
